@@ -20,5 +20,15 @@ describe('fizzBuzz()', () => {
         const outputTwo = fizzBuzz(22); 
         expect(outputTwo).toBe('22');
         
+    });
+
+    it('should return Fizz if input is a multiple of 3', () => {
+        const output = fizzBuzz(3);
+        expect(output).toBe("Fizz"); 
+    });
+
+    it('Should return Buzz if input is a multiple of 5', ()=> {
+        const output = fizzBuzz(25);
+        expect(output).toBe("Buzz");
     })
 })
