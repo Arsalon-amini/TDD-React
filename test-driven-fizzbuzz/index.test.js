@@ -6,8 +6,8 @@ const fizzBuzz = require('./index');
 //toBe () - a matcher that performs a strict equality test between the value being tested (expect() arg) and expected value (own arg)
 
 describe('fizzBuzz()', ()=> {
-    it('returns "FizzBuzz" for multiples of 3 and 5', () => {
-        expect(fizzBuzz(15)).toBe('FizzBuzz');
-        expect(fizzBuzz(45)).toBe('FizzBuzz');
+    it('should return FizzBuzz if divisible by 3 and 5', () => {
+        const fnOutput = fizzBuzz(15);
+        expect(fnOutput).toBe('FizzBuzz');
     });
 })
