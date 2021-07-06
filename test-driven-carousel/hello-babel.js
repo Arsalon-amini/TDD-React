@@ -1,0 +1,2 @@
+import figlet from 'figlet';
+console.log(figlet.textSync('Hello, Babel You Are Code'));
