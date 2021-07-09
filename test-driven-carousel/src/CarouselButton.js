@@ -8,4 +8,4 @@ CarouselButton.propTypes = {
 };
 
 
-export default CarouselButton
+export default CarouselButton;
