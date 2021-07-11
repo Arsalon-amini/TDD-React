@@ -9,7 +9,7 @@
     "lint": "eslint . && prettier-eslint --list-different **/*.js",
     "format": "prettier-eslint --write **/*.js",
     "build": "webpack --config webpack.config.js",
-     "dev": "webpack-dev-server --config webpack.config.js --open"
+    "dev": "webpack-dev-server --config webpack.config.js --open"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.4.2"
+    "react": "^16.4.2",
+    "styled-components": "^4.1.1"
   }
 }
