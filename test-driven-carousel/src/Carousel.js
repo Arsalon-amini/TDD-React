@@ -8,7 +8,7 @@ import CarouselSlide from './CarouselSlide';
 class Carousel extends React.PureComponent {
     static propTypes = {
         defaultImgHeight: CarouselSlide.propTypes.imgHeight,
-        slides: PropTypes.arrayOf(PropTypes.shape(CarouselSlide.propTypes))
+        slides: PropTypes.arrayOf(PropTypes.shape(CarouselSlide.propTypes)) //must be an array of objects that have same shape as CarouselSlide propTypes
             .isRequired,
     };
     
@@ -17,11 +17,17 @@ class Carousel extends React.PureComponent {
     };
 
     handlePrevClick = () => {
-        this.setState(({ slideIndex }) => ({ slideIndex: slideIndex - 1 }));
+        const { slides } = this.props;
+        this.setState(({ slideIndex }) => ({
+            slideIndex: (slideIndex + slides.length - 1) % slides.length,
+        }));
     };
 
     handleNextClick = () => {
-        this.setState(({ slideIndex }) => ({ slideIndex: slideIndex + 1 }));
+        const { slides } = this.props;
+        this.setState(({ slideIndex }) => ({
+            slideIndex: (slideIndex + 1) % slides.length,
+        }));
     }
 
     render() {
