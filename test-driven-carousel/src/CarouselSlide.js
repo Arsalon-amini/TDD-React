@@ -6,14 +6,14 @@ import styled from 'styled-components';
 const Img = styled.img`
   object-fit: cover;
   width: 100%;
-  height: 500px;
+  height: ${props => typeof props.imgHeight === 'number' ? `${props.imgHeight}px` : props.imgHeight};
 `;
 
 
 
-const CarouselSlide = ({imgUrl, description, attribution, ...rest }) => (
+const CarouselSlide = ({imgUrl, imgHeight, description, attribution, ...rest }) => (
     <figure {...rest}>
-        <Img src={imgUrl} />
+        <Img src={imgUrl} imgHeight={imgHeight}/>
         <figcaption>
            <strong>{description}</strong> {attribution}</figcaption>
     </figure>
@@ -21,10 +21,16 @@ const CarouselSlide = ({imgUrl, description, attribution, ...rest }) => (
 
 
 CarouselSlide.propTypes = {
+    imgHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     imgUrl: PropTypes.string.isRequired,
     description: PropTypes.node.isRequired,
     attribution: PropTypes.node,
 };
+
+CarouselSlide.defaultProps = {
+  imgHeight: 500,
+};
+
 
 
 export default CarouselSlide; 
