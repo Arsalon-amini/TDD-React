@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Carousel from '../Carousel';
 import CarouselButton from '../CarouselButton';
+import CarouselSlide from '../CarouselSlide';
 
 describe('Carousel', () => {
     let wrapper;
@@ -86,11 +87,16 @@ describe('Carousel', () => {
     it('renders the current slide as a CarouselSlide', () => {
         let slideProps;
         slideProps = wrapper.find(CarouselSlide).props(); //returns all props passed to carouselSlide (check props passed to CarouselSlide)
-        expect(slideProps).toEqual(slides[0]); //expects props passed to carouselSlide to equal data[0] in parent component (parent passes data to child via props)
+        expect(slideProps).toEqual({
+            ...CarouselSlide.defaultProps,
+            ...slides[0],
+           }); //props passed to carouselSlide + default props 
 
         wrapper.setState({ slideIndex: 1 });
         slideProps = wrapper.find(CarouselSlide).props();
-        expect(slideProps).toEqual(slides[1]);
+        expect(slideProps).toEqual({
+            ...CarouselSlide.defaultProps,
+            ...slides[1],
+        });
     });
-
 });
