@@ -11,7 +11,7 @@ const Img = styled.img`
 
 
 
-const CarouselSlide = ({imgUrl, imgHeight, description, attribution, ...rest }) => (
+const CarouselSlide = ({Img, imgUrl, imgHeight, description, attribution, ...rest }) => (
     <figure {...rest}>
         <Img src={imgUrl} imgHeight={imgHeight}/>
         <figcaption>
@@ -21,6 +21,7 @@ const CarouselSlide = ({imgUrl, imgHeight, description, attribution, ...rest }) 
 
 
 CarouselSlide.propTypes = {
+    Img: PropTypes.elementType, //validates prop is a valid argument for React.CreateElement: either DOM elem or Component
     imgHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     imgUrl: PropTypes.string.isRequired,
     description: PropTypes.node.isRequired,
@@ -28,6 +29,7 @@ CarouselSlide.propTypes = {
 };
 
 CarouselSlide.defaultProps = {
+  Img,
   imgHeight: 500,
 };
 

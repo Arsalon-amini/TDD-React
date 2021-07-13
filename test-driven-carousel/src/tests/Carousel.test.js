@@ -90,7 +90,7 @@ describe('Carousel', () => {
         expect(slideProps).toEqual({
             ...CarouselSlide.defaultProps,
             ...slides[0],
-           }); //props passed to carouselSlide + default props 
+           }); //tests that both props passed to carouselSlide + default props available 
 
         wrapper.setState({ slideIndex: 1 });
         slideProps = wrapper.find(CarouselSlide).props();
