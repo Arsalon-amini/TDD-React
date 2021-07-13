@@ -95,6 +95,18 @@ describe('CarouselSlide', () => {
             expect(mounted.find(TestImg)).toHaveStyleRule('height', 'auto');
             expect(mounted.find(TestImg)).toHaveStyleRule('object-fit', 'fill');
         })
+
+        it('renders correctly', () => {
+            expect(mounted.find('img')).toMatchSnapshot();
+        });
+    });
+
+    it('renders correctly', () => {
+        wrapper.setProps({
+            description: 'Description',
+            attribution: 'Attribution',
+        });
+        expect(wrapper).toMatchSnapshot();
     });
 
 })
