@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 //styled.img = fn that generates a component that renders <img> tag w/ given styles, using clas name selector 
 const Img = styled.img`
+  height: ${props => typeof props.imgHeight === 'number' ? `${props.imgHeight}px` : props.imgHeight};
   object-fit: cover;
   width: 100%;
-  height: ${props => typeof props.imgHeight === 'number' ? `${props.imgHeight}px` : props.imgHeight};
 `;
 
 

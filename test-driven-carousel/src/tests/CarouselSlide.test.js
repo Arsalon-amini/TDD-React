@@ -78,11 +78,11 @@ describe('CarouselSlide', () => {
         });
 
         it('allows styles to be overridden', () => {
-            //extending styled components - pass an existing styled component to styled(), it'll return a new component with the stles from the original plus the new styles
+            //extending styled components - pass an existing styled component to styled(), it'll return a new component with the styles from the original plus the new styles
             const TestImg = styled(CarouselSlide.defaultProps.Img)`
-            width: auto;
             height: auto;
             object-fit: fill;
+            width: auto;
             `;
 
             mounted = mount(<CarouselSlide
